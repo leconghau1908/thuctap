@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle K</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="index.html" class="logo"><span>C</span>ircle K</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#Diachi">Địa Chỉ</a>
+            <a href="#services">Dịch Vụ</a>
+            <a href="#gallery">Sản Phẩm </a>
+            <a href="#review">Đánh Giá</a>
+        </nav>
+
+        <!-- <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div> -->
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- login form container  -->
+
+    <!-- <div class="login-form-container">
+
+        <i class="fas fa-times" id="form-close"></i>
+
+        <form action="">
+            <h3>login</h3>
+            <input type="email" class="box" placeholder="enter your email">
+            <input type="password" class="box" placeholder="enter your password">
+            <input type="submit" value="login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>forget password? <a href="#">click here</a></p>
+            <p>don't have and account? <a href="#">register now</a></p>
+        </form>
+
+    </div> -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+
+            <a href="../index.php" class="btn">Mua Hàng</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="images/vid-1.mp4"></span>
+            <span class="vid-btn" data-src="images/vid-2.mp4"></span>
+            <span class="vid-btn" data-src="images/vid-3.mp4"></span>
+            <span class="vid-btn" data-src="images/vid-4.mp4"></span>
+            <span class="vid-btn" data-src="images/vid-5.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+    <!-- packages section starts  -->
+
+    <section class="Diachi" id="Diachi">
+
+        <h1 class="heading">
+            <span>Đ</span>
+            <span>ị</span>
+            <span>a</span>
+            <span>C</span>
+            <span>h</span>
+            <span>ỉ</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/p-1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Nam Từ Liêm </h3>
+                    <p>số nhà 184 đường Lê Đức Thọ phường 6 quận Nam Từ Liêm thành phố Hà Nội Việt Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/p-2.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Hoàng Mai </h3>
+                    <p>số nhà 49 đường Nguyễn Văn Bảo phường 4 quận Hoàng Mai thành phố Hà Nội Viet Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/p-3.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Hai Bà Trưng </h3>
+                    <p>số nhà 315B đường Bùi Hữu Nghĩa phường 1 quận Hai Bà Trưng thành phố Ha Nội Viet Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/p-4.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Nguyễn Thiện Thuật </h3>
+                    <p>số nhà 147 đường Nguyễn Thiện Thuật phường 1 district 3 thành phố Ho Chi Minh Viet Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/p-5.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Sư Vạn Hạnh </h3>
+                    <p>số nhà 20 – 22 đường Sư Vạn Hạnh district 5 thành phố Ho Chi Minh Viet Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/p-6.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Tôn Đản </h3>
+                    <p>số nhà 13 đường Tôn Đản phường 13 district 4 thành phố Ho Chi Minh Viet Nam</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <a href="#" class="btn">Chi Tiết</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- packages section ends -->
+
+    <!-- services section starts  -->
+
+    <section class="services" id="services">
+
+        <h1 class="heading">
+            <span>D</span>
+            <span>ị</span>
+            <span>c</span>
+            <span>h</span>
+            <span>V</span>
+            <span>ụ</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-wifi"></i>
+                <h3>WIFI</h3>
+                <p>Miễn Phí Sử Dụng Wifi </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>Đô Ăn Thức Uống</h3>
+                <p>Đa Dạng Nhanh Chóng Tiện Nợi với mọi Khách Hàng</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-university"></i>
+                <h3>Thanh Toán</h3>
+                <p>Thanh Toán Tiện Nợi Nhanh Chóng</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Địa Chỉ</h3>
+                <p>Cửa Hàng Được Phân Phối Rộng Dãi Dễ Tìm Kiếm</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-sim-card"></i>
+                <h3>Sim Thẻ</h3>
+                <p>Thẻ Điện Thoại của Viettel, Mobifone, Vinaphone, Vietnamobile, Gmobile; với nhiều mệnh giá khác nhau, từ 10.000 VNĐ, 20.000 VNĐ đến 500.000 VNĐ, Bạn có thể mua ở bất kì cửa hàng Circle K nào, vào bất cứ lúc nào trong ngày</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-shopping-basket"></i>
+                <h3>Sản Phẩm</h3>
+                <p>Sản Phẩm Đa Dạng Nhiều Mẫu Mã</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- services section ends -->
+
+    <!-- gallery section starts  -->
+
+    <section class="gallery" id="gallery">
+
+        <h1 class="heading">
+            <span>S</span>
+            <span>ả</span>
+            <span>n</span>
+            <span>P</span>
+            <span>h</span>
+            <span>ẩ</span>
+            <span>m</span>
+            <span>H</span>
+            <span>o</span>
+            <span>t</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/g-1.jpg" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+                    <a href="/demoweb/detail.php?id=13" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-2.jpg" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=17" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-3.jpg" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=16" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-4.jpg" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=12" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-5.png" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=4" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-6.png" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/detail.php?id=7" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-7.png" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=2" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-8.png" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=8" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/g-9.jpg" alt="">
+                <div class="content">
+                    <h3>Top Sản Phẩm</h3>
+
+                    <a href="/demoweb/detail.php?id=19" class="btn">Xem Thêm</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- gallery section ends -->
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+
+        <h1 class="heading">
+            <span>Đ</span>
+            <span>á</span>
+            <span>n</span>
+            <span>h</span>
+            <span>G</span>
+            <span>i</span>
+            <span>á</span>
+        </h1>
+
+        <div class="swiper-container review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic1.jpg" alt="">
+                        <h3>Văn Tâm</h3>
+                        <p>Wifi Căng Đét Tuy Là Thức Ăn Nhanh Nhưng Vẫn Rất Vừa Miệng KaKa</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic2.jpg" alt="">
+                        <h3>Diệu Hiền</h3>
+                        <p>+10đ Cho Chất Lượng Phục Vụ Nhanh Chóng Sản Phẩm Đa Dạng</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic3.jpg" alt="">
+                        <h3>Phan Hằng</h3>
+                        <p>Sản Phẩm Tốt Giá Cả hợp Lý Phù Hợp Với Túi Tiền Của Học Sinh Sinh Viên</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/pic4.jpg" alt="">
+                        <h3>Công Hậu</h3>
+                        <p>Phục Vụ Nhanh Chóng Tiện lợi Nhân Viên Trẻ Trung Năng Động Tích Cực Trong Công Việc</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- review section ends -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Circle k</h3>
+                <p>Chuỗi cửa hàng tiện lợi Mở cửa 24/7 Copyright © 2016 Circle K Vietnam Email: info@circlek.com.vn
+                </p>
+            </div>
+            <div class="box">
+                <h3>Địa điểm chi nhánh</h3>
+                <a href="#">Việt Nam</a>
+                <a href="#">Trung Quốc</a>
+                <a href="#">Japan</a>
+                <a href="#">USA</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="/index.php">home</a>
+                <a href="/font-end/index.html?#Diachi">Địa Chỉ</a>
+                <a href="/font-end/index.html?#services">Dịch Vụ</a>
+                <a href="/font-end/index.html?#gallery">Sản Phẩm</a>
+                <a href="/font-end/index.html?#review">Đánh Giá</a>
+
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">instagram</a>
+                <a href="#">twitter</a>
+                <a href="#">linkedin</a>
+            </div>
+
+        </div>
+
+        <h1 class="credit"> Circle K <span> demoweb </span> | Hân Hạnh Phục Vụ Quý Khách </h1>
+
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
