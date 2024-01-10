@@ -68,10 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <label for="dob">Ngày sinh</label>
                 <input type="date" name="dob" id="dob" required>
-                <br>
-                <!-- <label for="phone">Số điện Thoại</label> <br>
-                <input type="text" id="phone" name="phone" placeholder="Số điện thoại..." required> -->
-                
+             
 
                 <input type="submit" value="Đăng ký" name="submit">
             </form>

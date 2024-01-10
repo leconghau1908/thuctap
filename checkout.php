@@ -100,6 +100,9 @@ $userInfo = $user->get();
                     <div>
                         Địa chỉ nhận hàng: <b><?= $userInfo['address'] ?></b>
                     </div>
+                    <div>
+                        email người nhận: <b><?= $userInfo['email']?></b>
+                    </div>
                    
                     <div class="buy-btn">
                         <a href="add_order.php">Tiến hành đặt hàng</a>
