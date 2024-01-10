@@ -27,114 +27,106 @@ $result = $order->getOrderByUser();
 </head>
 
 <body>
-    <nav>
-        <label class="logo">CircleK</label>
-        <ul>
-            <li><a href="index.php">Trang chủ</a></li>
-            <li><a href="productList.php">Sản phẩm</a></li>
-            <?php
-            if (isset($_SESSION['user']) && $_SESSION['user']) { ?>
-                <li><a href="logout.php" id="signin">Đăng xuất</a></li>
-            <?php } else { ?>
-                <li><a href="register.php" id="signup">Đăng ký</a></li>
-                <li><a href="login.php" id="signin">Đăng nhập</a></li>
-            <?php } ?>
-            <li><a href="order.php" id="order" class="active">Đơn hàng</a></li>
-            <li>
-                <a href="checkout.php">
-                    <i class="fa fa-shopping-bag"></i>
-                    <span class="sumItem">
+<nav>
+    <label class="logo">CircleK</label>
+    <ul>
+        <li><a href="index.php">Trang chủ</a></li>
+        <li><a href="productList.php">Sản phẩm</a></li>
+        <?php
+        if (isset($_SESSION['user']) && $_SESSION['user']) { ?>
+            <li><a href="logout.php" id="signin">Đăng xuất</a></li>
+        <?php } else { ?>
+            <li><a href="register.php" id="signup">Đăng ký</a></li>
+            <li><a href="login.php" id="signin">Đăng nhập</a></li>
+        <?php } ?>
+        <li><a href="order.php" id="order" class="active">Đơn hàng</a></li>
+        <li>
+            <a href="checkout.php">
+                <i class="fa fa-shopping-bag"></i>
+                <span class="sumItem">
                         <?= $totalQty['total'] ?>
                     </span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <section class="banner"></section>
-    <div class="featuredProducts">
-        <h1>Đơn hàng</h1>
-    </div>
-    <div class="container-single">
-        <?php if ($result) { ?>
-            <table class="order">
+            </a>
+        </li>
+    </ul>
+</nav>
+<section class="banner"></section>
+<div class="featuredProducts">
+    <h1>Đơn hàng</h1>
+</div>
+<div class="container-single">
+    <?php if ($result) { ?>
+        <table class="order">
+            <tr>
+                <th>STT</th>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt</th>
+                <th>Ngày giao</th>
+                <th>Tình trạng</th>
+                <th>Chi Tiết</th>
+                <th>Thao tác</th>
+            </tr>
+            <?php $count = 1;
+            foreach ($result as $key => $value) { ?>
                 <tr>
-                    <th>STT</th>
-                    <th>Mã đơn hàng</th>
-                    <th>Ngày đặt</th>
-                    <th>Ngày giao</th>
-                    <th>Tình trạng</th>
-                    <th>Chi Tiết</th>
-                    <th>Thao tác</th>
+                    <td><?= $count++ ?></td>
+                    <td><?= $value['id'] ?></td>
+                    <td><?= $value['createdDate'] ?></td>
+                    <td><?= ($value['status'] != "Processing") ? $value['receivedDate'] : "Đơn hàng đang sử lý Thanh toán khi nhận hàng" ?> <?= ($value['status'] != "Complete" && $value['status'] != "Processing") ? "(Dự kiến)" : "" ?> </td>
+                    <?php
+                    if ($value['status'] == 'Delivering') { ?>
+                        <td>
+                            <a href="complete_order.php?orderId=<?= $value['id'] ?>">Đang giao (Click vào để xác nhận đã
+                                nhận)</a>
+                        </td>
+                        <td>
+                            <a href="orderdetail.php?orderId=<?= $value['id'] ?>">Chi tiết</a>
+                        </td>
+                    <?php } else { ?>
+                        <td>
+                            <?= $value['status'] ?>
+                        </td>
+                        <td>
+                            <a href="orderdetail.php?orderId=<?= $value['id'] ?>">Chi tiết</a>
+                        </td>
+                        <td>
+                            <?php if ($value['status'] !== 'Complete' && $value['status'] !== 'Cancelled') { ?>
+                                <a href="cancel_order.php?id=<?= $value['id'] ?>">Hủy đơn</a>
+                            <?php } else { ?>
+                                <?php echo $value['status']; ?>
+                            <?php } ?>
+
+                        </td>
+
+                    <?php }
+                    ?>
                 </tr>
-                <?php $count = 1;
-                foreach ($result as $key => $value) { ?>
-                    <tr>
-                        <td><?= $count++ ?></td>
-                        <td><?= $value['id'] ?></td>
-                        <td><?= $value['createdDate'] ?></td>
-                        <td><?= ($value['status'] != "Processing") ? $value['receivedDate'] : "Đơn hàng đang sử lý Thanh toán khi nhận hàng" ?> <?= ($value['status'] != "Complete" && $value['status'] != "Processing") ? "(Dự kiến)" : "" ?> </td>
-                        <?php
-                        if ($value['status'] == 'Delivering') { ?>
-                            <td>
-                                <a href="complete_order.php?orderId=<?= $value['id'] ?>">Đang giao (Click vào để xác nhận đã nhận)</a>
-                            </td>
-                            <td>
-                                <a href="orderdetail.php?orderId=<?= $value['id'] ?>">Chi tiết</a>
-                            </td>
-                        <?php } else { ?>
-                            <td>
-                                <?= $value['status'] ?>
-                            </td>
-                            <td>
-                                <a href="orderdetail.php?orderId=<?= $value['id'] ?>">Chi tiết</a>
-                            </td>
-                            <td>
-                                <?php if ($value['status'] !== 'Complete' && $value['status'] !== 'Cancelled') { ?>
-                                    <a href="#" onclick="confirmCancel(<?= $value['id'] ?>)">Hủy đơn</a>
-                                <?php } else { ?>
-                                    <?php echo $value['status']; ?>
-                                <?php } ?>
-
-                            </td>
-
-                        <?php }
-                        ?>
-                    </tr>
-                <?php } ?>
-            </table>
-        <?php } else { ?>
-            <h3>Đơn hàng hiện đang rỗng</h3>
-        <?php } ?>
+            <?php } ?>
+        </table>
+    <?php } else { ?>
+        <h3>Đơn hàng hiện đang rỗng</h3>
+    <?php } ?>
 
 
+</div>
+</div>
+<footer>
+    <div class="social">
+        <a href="https://www.facebook.com/trung.thai.98892615"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     </div>
-    </div>
-    <footer>
-        <div class="social">
-            <a href="https://www.facebook.com/trung.thai.98892615"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        <ul class="list">
-            <li>
-                <a href="./">Trang Chủ</a>
-            </li>
-            <li>
-                <a href="productList.php">Sản Phẩm</a>
-            </li>
-        </ul>
-        <p class="copyright">CircleK @ 2022</p>
-    </footer>
-    <!-- Trong phần head của HTML -->
-<script>
-    function confirmCancel(orderId) {
-        var confirmCancel = confirm('Bạn có chắc muốn hủy đơn hàng này không?');
-
-        if (confirmCancel) {
-            window.location.href = 'order.php?orderId=' + orderId;
-        }
-    }
-</script>
+    <ul class="list">
+        <li>
+            <a href="./">Trang Chủ</a>
+        </li>
+        <li>
+            <a href="productList.php">Sản Phẩm</a>
+        </li>
+    </ul>
+    <p class="copyright">CircleK @ 2022</p>
+</footer>
+<!-- Trong phần head của HTML -->
 
 </body>
 

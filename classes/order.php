@@ -174,5 +174,14 @@ class order
         }
         return false;
     }
+
+    public function cancelOrder($id) {
+        $query = "UPDATE orders
+        SET status = 'Cancelled'
+        WHERE id = '$id'
+        ";
+
+        return $this->db->update($query);
+    }
 }
 ?>
