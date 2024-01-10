@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form action="register.php" method="post" class="form-login">
                 <label for="fullName">Họ tên</label>
                 <input type="text" id="fullName" name="fullName" placeholder="Họ tên..." required>
-
+                
                 <label for="email">Email</label>
                 <p class="error"><?= !empty($result) ? $result : '' ?></p>
                 <input type="email" id="email" name="email" placeholder="Email..." required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
@@ -64,10 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" id="repassword" name="repassword" required placeholder="Nhập lại mật khẩu..." oninput="check(this)">
 
                 <label for="address">Địa chỉ</label>
-                <textarea name="address" id="address" cols="30" rows="5" required></textarea>
+                <textarea name="address" id="address" cols="30" rows="5" required placeholder="nhập địa chỉ nhận hàng"></textarea>
 
                 <label for="dob">Ngày sinh</label>
                 <input type="date" name="dob" id="dob" required>
+                <br>
+                <!-- <label for="phone">Số điện Thoại</label> <br>
+                <input type="text" id="phone" name="phone" placeholder="Số điện thoại..." required> -->
+                
 
                 <input type="submit" value="Đăng ký" name="submit">
             </form>

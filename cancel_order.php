@@ -13,6 +13,6 @@ if (isset($_GET['id'])) {
         return;
     }
 
-    echo '<script type="text/javascript">alert("Huy don hang thanh cong!"); history.back();</script>';
+    echo '<script type="text/javascript">alert("Hủy đơn hàng thành công!"); history.back();</script>';
 }
 ?>
