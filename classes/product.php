@@ -224,5 +224,35 @@ class product
         }
         return false;
     }
+    public function searchProductsByName($name) {
+        $sql = "SELECT * FROM products WHERE name LIKE '%$name%'";
+        $result = $this->db->select($sql);
+
+        if (!$result) {
+            return null;
+        }
+
+        return $result;
+    }
+    public function delete($product_id) {
+      
+        $query = "DELETE FROM products WHERE id = :id";
+        
+        
+        $stmt = $this->db->prepare($query);
+        
+        // Bind giá trị của tham số id
+        $stmt->bindParam(':id', $product_id);
+        
+        // Thực thi truy vấn
+        if ($stmt->execute()) {
+           
+            return true; 
+        } else {
+            return false;
+        }
+    }
+    
+    
 }
 ?>

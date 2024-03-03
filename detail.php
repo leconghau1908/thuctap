@@ -33,8 +33,13 @@ if (!$result) {
         <ul>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="productList.php">Sản phẩm</a></li>
-            <li><a href="register.php" id="signup">Đăng ký</a></li>
-            <li><a href="login.php" id="signin">Đăng nhập</a></li>
+            <?php
+            if (isset($_SESSION['user']) && $_SESSION['user']) { ?>
+                <li><a href="logout.php" id="signin">Đăng xuất</a></li>
+            <?php } else { ?>
+                <li><a href="register.php" id="signup">Đăng ký</a></li>
+                <li><a href="login.php" id="signin">Đăng nhập</a></li>
+            <?php } ?>
             <li><a href="order.php" id="order">Đơn hàng</a></li>
             <li>
                 <a href="checkout.php">
@@ -80,7 +85,7 @@ if (!$result) {
     </div>
     <footer>
         <div class="social">
-        <a href="https://www.facebook.com/trung.thai.98892615"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
         </div>

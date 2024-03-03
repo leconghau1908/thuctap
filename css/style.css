@@ -30,8 +30,9 @@ label.logo {
 }
 
 nav ul {
+    display: inline-block;
     float: right;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 nav ul li {
@@ -52,6 +53,18 @@ nav ul li a {
 
 a.active,
 a:hover {
+    background: white;
+    color: slateblue;
+}
+
+.search-btn {
+    background: white;
+    color: slateblue;
+    transition: background 0.3s, color 0.3s;
+    /* Thêm transition để tạo hiệu ứng mượt mà */
+}
+
+.search-btn:hover {
     background: white;
     color: slateblue;
 }

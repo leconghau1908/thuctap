@@ -93,7 +93,8 @@ $pageCount = $product->getCountPaging();
                         <td><?= $value['qty'] ?></td>
                         <td><?= ($value['status']) ? "Active" : "Block" ?></td>
                         <td>
-                            <a href="edit_product.php?id=<?= $value['id'] ?>">Xem/Sửa</a>
+                            <a href="edit_product.php?id=<?= $value['id'] ?>">Sửa</a>
+                            <a href="delete_product.php?id=<?= $value['id'] ?>">Xóa</a>
                             <?php
                             if ($value['status']) { ?>
                                 <form action="productlist.php" method="post">

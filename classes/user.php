@@ -21,20 +21,34 @@ class user
 	}
 
 	public function login($email, $password)
-	{
-		$query = "SELECT * FROM users WHERE email = '$email' AND password = '$password' LIMIT 1 ";
-		$result = $this->db->select($query);
-		if ($result) {
-			$value = $result->fetch_assoc();
-			Session::set('user', true);
-			Session::set('userId', $value['id']);
-			Session::set('role_id', $value['role_id']);
-			header("Location:index.php");
-		} else {
-			$alert = "Tên đăng nhập hoặc mật khẩu không đúng!";
-			return $alert;
-		}
-	}
+{
+    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password' LIMIT 1";
+    $result = $this->db->select($query);
+    if ($result) {
+        $value = $result->fetch_assoc();
+        Session::set('user', true);
+        Session::set('userId', $value['id']);
+        Session::set('role_id', $value['role_id']);
+        
+        // Check the role_id
+        $role_id = $value['role_id'];
+        if ($role_id == 1) {
+            header("Location: admin/orderlist.php");
+            exit;
+        } elseif ($role_id == 2) {
+            header("Location: index.php");
+            exit;
+        } else {
+            // Handle other role_ids if needed
+            header("Location: some_default_page.php");
+            exit;
+        }
+    } else {
+        $alert = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        return $alert;
+    }
+}
+
 
 	public function insert($data)
 	{
@@ -42,6 +56,7 @@ class user
 		$email = $data['email'];
 		$dob = $data['dob'];
 		$address = $data['address'];
+		$phone = $data['phone'];
 		$password = md5($data['password']);
 
 
@@ -53,7 +68,7 @@ class user
 			// Genarate captcha
 			$captcha = rand(10000, 99999);
 
-			$query = "INSERT INTO users VALUES (NULL,'$email','$fullName','$dob','$password',2,1,'$address',0,'" . $captcha . "') ";
+			$query = "INSERT INTO users VALUES (NULL,'$email','$fullName','$dob','$password',2,1,'$address', '$phone', 0, '" . $captcha . "') ";
 			$result = $this->db->insert($query);
 			if ($result) {
 				// Send email
@@ -66,13 +81,13 @@ class user
 				$mail->SMTPSecure = "tls";
 				$mail->Port       = 587;
 				$mail->Host       = "smtp.gmail.com";
-				$mail->Username   = "nguyenviettrung0887@gmail.com";
+				$mail->Username   = "test@gmail.com";
 				$mail->Password   = "096955614ZZZ";
 
 				$mail->IsHTML(true);
 				$mail->CharSet = 'UTF-8';
 				$mail->AddAddress($email, "recipient-name");
-				$mail->SetFrom("nguyenviettrung0887@gmail.com", "Instrument Store");
+				$mail->SetFrom("test@gmail.com", "Instrument Store");
 				$mail->Subject = "Xác nhận email tài khoản - Instruments Store";
 				$mail->Body = "<h3>Cảm ơn bạn đã đăng ký tài khoản tại website InstrumentStore</h3></br>Đây là mã xác minh tài khoản của bạn: " . $captcha . "";
 

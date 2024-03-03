@@ -32,6 +32,9 @@ class Database extends PDO
       return false;
     }
   }
+//   public function getConnection() {
+//     return $this->getConnection();
+// }
 
   // Select or Read data
   public function select($query)

@@ -98,10 +98,10 @@ $userInfo = $user->get();
                         Tổng tiền: <b id="totalcart"><?= number_format($totalPrice['total'], 0, '', ',') ?>VND</b>
                     </div>
                     <div>
-                        Địa chỉ nhận hàng: <b><?= $userInfo['address'] ?></b>
+                        Thông tin đặt hàng: <b><?= $userInfo['address'] ?></b>
                     </div>
                     <div>
-                        email người nhận: <b><?= $userInfo['email']?></b>
+                        Số điện thoại người nhận: <b><?= $userInfo['phone']?></b>
                     </div>
                    
                     <div class="buy-btn">

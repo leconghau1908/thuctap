@@ -4,6 +4,7 @@ include_once 'classes/product.php';
 include_once 'classes/categories.php';
 include_once 'classes/cart.php';
 
+$product = new Product($db);
 $cart = new cart();
 $totalQty = $cart->getTotalQtyByUserId();
 
